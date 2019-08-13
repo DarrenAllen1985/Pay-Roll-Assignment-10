@@ -1,52 +1,53 @@
 package com.darren.controller.user;
 
+import com.darren.domain.demography.Gender;
+import com.darren.domain.demography.Race;
 import com.darren.domain.user.Employee;
-import com.darren.domain.user.Employee;
-import com.darren.service.EmployeeService;
-import com.darren.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.darren.domain.user.EmployeeGender;
+import com.darren.domain.user.EmployeeRace;
+import com.darren.factory.demography.GenderFactory;
+import com.darren.factory.demography.RaceFactory;
+import com.darren.factory.user.EmployeeFactory;
+import com.darren.factory.user.EmployeeGenderFactory;
+import com.darren.factory.user.EmployeeRaceFactory;
+import com.darren.service.demography.GenderService;
+import com.darren.service.demography.RaceService;
+import com.darren.service.demography.impl.GenderServiceImpl;
+import com.darren.service.demography.impl.RaceServiceImpl;
+import com.darren.service.user.EmployeeGenderService;
+import com.darren.service.user.EmployeeRaceService;
+import com.darren.service.user.EmployeeService;
+import com.darren.service.user.impl.EmployeeGenderServiceImpl;
+import com.darren.service.user.impl.EmployeeRaceServiceImpl;
+import com.darren.service.user.impl.EmployeeServiceImpl;
 
-import java.util.Set;
 
 public class EmployeeController {
-    @Autowired
-    @Qualifier("EmployeeServiceImpl")
-    private EmployeeService service;
 
-    @PostMapping("/create")
-    @ResponseBody
-    public Employee create(Employee employee) {
-        return service.create(employee);
-    }
+    private EmployeeService employeeService = EmployeeServiceImpl.getEmployeeService();
+    private EmployeeGenderService employeeGenderService = EmployeeGenderServiceImpl.getEmployeeGenderService();
+    private EmployeeRaceService employeeRaceService = EmployeeRaceServiceImpl.getEmployeeRaceService();
+    private RaceService raceService = RaceServiceImpl.getRaceService();
+    private GenderService genderService = GenderServiceImpl.getGenderService();
 
-    @PostMapping("/update")
-    @ResponseBody
-    public Employee update(Employee employee) {
-        return service.update(employee);
-    }
+    public void create(String firstName, String lastName, int genderId, int raceId){
 
-    @GetMapping("/delete/{id}")
-    @ResponseBody
-    public void delete(@PathVariable String id) {
-        service.delete(id);
+        Employee employee = EmployeeFactory.buildEmployee(firstName, lastName);
+        employeeService.create(employee);
 
-    }
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender("123", "456");
+        employeeGenderService.create(employeeGender);
 
-    @GetMapping("/read/{id}")
-    @ResponseBody
-    public Employee read(@PathVariable String id) {
-        return service.read(id);
-    }
+        EmployeeRace employeeRace = EmployeeRaceFactory.buildEmployeeRace("567", "987");
+        employeeRaceService.create(employeeRace);
 
-    @GetMapping("/read/all")
-    @ResponseBody
-    public Set<Employee> getAll() {
-        return service.getAll();
+        Race race = RaceFactory.buildRace("Indian");
+        raceService.create(race);
+
+        Gender gender = GenderFactory.buildGender("Male");
+        genderService.create(gender);
+
+
     }
 
 

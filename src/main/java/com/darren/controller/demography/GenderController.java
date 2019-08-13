@@ -1,7 +1,7 @@
 package com.darren.controller.demography;
 
 import com.darren.domain.demography.Gender;
-import com.darren.service.GenderService;
+import com.darren.service.demography.GenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;

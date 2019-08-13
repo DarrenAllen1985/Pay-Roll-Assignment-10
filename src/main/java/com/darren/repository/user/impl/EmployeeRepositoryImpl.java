@@ -31,7 +31,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     @Override
     public Employee update(Employee employee) {
         Employee updatedEmployee = null;
-        //Employee em = new Employee.Builder().copy(employee).employeeFirstName(); #Due to using SET this is not needed
+
         Employee e = read(employee.getEmployeeNumber());
         if (e != null){
             delete(employee.getEmployeeNumber());

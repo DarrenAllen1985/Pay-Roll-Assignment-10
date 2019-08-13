@@ -1,9 +1,9 @@
-package com.darren.service.demography;
+package com.darren.service.demography.impl;
 
 import com.darren.domain.demography.Gender;
 import com.darren.repository.demography.GenderRepository;
 import com.darren.repository.demography.impl.GenderRepositoryImpl;
-import com.darren.service.GenderService;
+import com.darren.service.demography.GenderService;
 
 import java.util.Set;
 
@@ -40,15 +40,6 @@ public class GenderServiceImpl implements GenderService {
     public Gender read(String s) {
         return this.genderRepository.read(s);
     }
-
-    /*@Override
-    public Gender saveGender(String firstName, String lastName, String gender){
-        Gender e = GenderFactory.buildGender(firstName, lastName);
-        //get gender if exist
-
-        create(e);
-        return e;
-    }*/
 
     @Override
     public Set<Gender> getAll() {

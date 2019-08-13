@@ -1,10 +1,10 @@
-package com.darren.service.impl;
+package com.darren.service.user.impl;
 
 import com.darren.domain.user.EmployeeGender;
 
 import com.darren.repository.user.EmployeeGenderRepository;
 import com.darren.repository.user.impl.EmployeeGenderRepositoryImpl;
-import com.darren.service.EmployeeGenderService;
+import com.darren.service.user.EmployeeGenderService;
 
 
 import java.util.Set;

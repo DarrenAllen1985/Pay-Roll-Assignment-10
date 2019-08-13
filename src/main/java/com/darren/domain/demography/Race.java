@@ -2,9 +2,18 @@ package com.darren.domain.demography;
 
 public class Race {
 
-    private String id, description;
+    private String id;
 
-    private Race(){}
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private String description;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public Race(Builder builder){
         this.id = builder.id;

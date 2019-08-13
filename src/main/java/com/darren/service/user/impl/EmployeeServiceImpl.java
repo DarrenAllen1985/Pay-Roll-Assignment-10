@@ -1,9 +1,9 @@
-package com.darren.service.impl;
+package com.darren.service.user.impl;
 
 import com.darren.domain.user.Employee;
 import com.darren.repository.user.EmployeeRepository;
 import com.darren.repository.user.impl.EmployeeRepositoryImpl;
-import com.darren.service.EmployeeService;
+import com.darren.service.user.EmployeeService;
 
 import java.util.Set;
 

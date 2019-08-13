@@ -33,7 +33,6 @@ public class GenderRepositoryImpl implements GenderRepository {
     @Override
     public Gender update(Gender gender) {
         Gender updatedGender = null;
-        //Gender em = new Gender.Builder().copy(gender).genderFirstName(); #Due to using SET this is not needed
         Gender e = read(gender.getId());
         if (e != null){
             delete(gender.getId());

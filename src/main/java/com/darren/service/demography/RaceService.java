@@ -1,7 +1,8 @@
-package com.darren.service;
+package com.darren.service.demography;
 
 import com.darren.domain.demography.Gender;
 import com.darren.domain.demography.Race;
+import com.darren.service.IService;
 
 import java.util.Set;
 

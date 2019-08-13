@@ -2,7 +2,7 @@ package com.darren.controller.demography;
 
 
 import com.darren.domain.demography.Race;
-import com.darren.service.RaceService;
+import com.darren.service.demography.RaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;

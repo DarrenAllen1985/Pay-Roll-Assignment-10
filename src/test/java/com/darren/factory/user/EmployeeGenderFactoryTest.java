@@ -1,0 +1,23 @@
+package com.darren.factory.user;
+
+import com.darren.domain.user.EmployeeGender;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class EmployeeGenderFactoryTest {
+
+    private String EmployeeGenderTest;
+
+    @Before
+    public void setUp() throws Exception {
+        this.EmployeeGenderTest = "EmployeeGenderTest";
+    }
+
+    @Test
+    public void buildEmployeeGender() {
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender("123456", "654321");
+        System.out.println(employeeGender);
+        Assert.assertNotNull(employeeGender.getEmployeeNumber());
+    }
+}

@@ -26,7 +26,7 @@ public class EmployeeRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.employeeRepository = EmployeeRepositoryImpl.getRepository();
-        this.employee = EmployeeFactory.buildEmployee("Mikhail", "Hathey");
+        this.employee = EmployeeFactory.buildEmployee("Darren", "Darren");
     }
 
     @After
@@ -34,14 +34,9 @@ public class EmployeeRepositoryImplTest {
 
     }
 
-
     @Test
     public void a_create() {
-        /*Employee created = this.employeeRepository.create(this.employee);
-        System.out.println("In create, created = " + created);
-        d_getAll();
-        Assert.assertSame(created, this.employee);*/
-        Employee e = EmployeeFactory.buildEmployee("Mikhail", "Hathey");
+        Employee e = EmployeeFactory.buildEmployee("Darren", "Darren");
         Employee savedE = this.employeeRepository.create(e);
         Assert.assertEquals(1, this.employeeRepository.getAll().size());
     }
@@ -50,9 +45,9 @@ public class EmployeeRepositoryImplTest {
     public void b_update() {
         String newname = "New Test Employee Name created";
         Employee employee = new Employee.Builder().copy(getSavedEmployee()).employeeFirstName(newname).build();
-        System.out.println("In update, about to be updated = " + employee);
+        System.out.println(".....About to  update  = " + employee);
         Employee updated = this.employeeRepository.update(employee);
-        System.out.println("In update, updated = " + updated);
+        System.out.println(".....Updated = " + updated);
         Assert.assertSame(newname, updated.getEmployeeFirstName());
         d_getAll();
     }

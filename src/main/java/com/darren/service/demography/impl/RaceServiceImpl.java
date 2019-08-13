@@ -1,9 +1,9 @@
-package com.darren.service.demography;
+package com.darren.service.demography.impl;
 
 import com.darren.domain.demography.Race;
 import com.darren.repository.demography.RaceRepository;
 import com.darren.repository.demography.impl.RaceRepositoryImpl;
-import com.darren.service.RaceService;
+import com.darren.service.demography.RaceService;
 
 import java.util.Set;
 
@@ -40,15 +40,6 @@ public class RaceServiceImpl implements RaceService {
     public Race read(String s) {
         return this.raceRepository.read(s);
     }
-
-    /*@Override
-    public Gender saveGender(String firstName, String lastName, String gender){
-        Gender e = GenderFactory.buildGender(firstName, lastName);
-        //get gender if exist
-
-        create(e);
-        return e;
-    }*/
 
     @Override
     public Set<Race> getAll() {

@@ -12,7 +12,6 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
 
     private Set<EmployeeGender> employeeGenders;
 
-
     private EmployeeGenderRepositoryImpl(){
         this.employeeGenders = new HashSet<>();
     }
@@ -31,7 +30,7 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
     @Override
     public EmployeeGender update(EmployeeGender employeeGender) {
         EmployeeGender updatedEmployee = null;
-        //EmployeeGenderServiceImpl em = new EmployeeGenderServiceImpl.Builder().copy(employeeGender).employeeFirstName(); #Due to using SET this is not needed
+
         EmployeeGender e = read(employeeGender.getEmployeeNumber());
         if (e != null){
             delete(employeeGender.getEmployeeNumber());
